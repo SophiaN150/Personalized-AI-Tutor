@@ -6,8 +6,8 @@ import requests
 from openai import OpenAI
 from pathlib import Path
 
-st.markdown("# Page 2: Image Generation (Lab 3) ❄️")
-st.sidebar.markdown("# Page 2: Image Generation ❄️")
+st.markdown("# Create your Own Visual Aid ❄️")
+st.sidebar.markdown("# Visual Aid")
 
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
