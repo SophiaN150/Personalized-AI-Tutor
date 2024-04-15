@@ -1,0 +1,60 @@
+import streamlit as st
+import fitz  #PyMuPDF
+
+from openai import OpenAI
+
+client = OpenAI(api_key='your-API-keys')
+
+# Create a file uploader
+uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+
+def abstract_summary_extraction(transcription):
+   response = client.chat.completions.create(
+       model="gpt-3.5-turbo",
+       temperature=0,
+       messages=[
+           {
+               "role": "system",
+               "content": "You are a highly skilled AI trained in language comprehension and summarization. I would like you to read the following text and summarize it into a concise abstract paragraph. Aim to retain the most important points, providing a coherent and readable summary that could help a person understand the main points of the discussion without needing to read the entire text. Please avoid unnecessary details or tangential points."
+           },
+           {
+               "role": "user",
+               "content": transcription
+           }
+       ]
+   )
+   return response.choices[0].message.content
+def translate(text, source_language = "English", target_language = "French"):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "system",
+                "content": "You will be provided with a sentence in "+ source_language
+                +", and your task is to translate it into " + target_language 
+            },
+            {
+                "role": "user",
+                "content": text
+            }
+        ],
+        temperature=0.7,
+        max_tokens=64,
+        top_p=1
+    )
+    
+    return response.choices[0].message.content
+
+if uploaded_file is not None:
+    # Load the PDF
+    pdf = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+     
+    # Analyze the PDF
+    for i in range(len(pdf)):
+        page = pdf.load_page(i)
+        text = page.get_text("text")
+        
+        st.write(f"Content of Page {i+1}:")
+        summary = abstract_summary_extraction(text)
+        translated_summary = translate(summary, "English", "French")
+        st.write(translated_summary)
