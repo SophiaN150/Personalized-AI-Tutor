@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.title("User Learning Survey")
+st.title("User Survey 📝")
+st.sidebar.success("Tell me about yourself")
 
 learning_styles = ['Visual', 'Auditory', 'Read/Write', 'Kinesthetic']
 learning_style = st.selectbox("What is your learning style?", learning_styles)
