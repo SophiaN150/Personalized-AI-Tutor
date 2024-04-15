@@ -7,7 +7,7 @@ from openai import OpenAI
 
 
 
-client = OpenAI(api_key='API Key')
+client = OpenAI(api_key='apikeyhere')
 
 def get_transcript(video_url):
     # Parse the URL and extract the video ID
@@ -44,8 +44,8 @@ def abstract_summary_extraction(transcription):
     )
     return response.choices[0].message.content
 
-st.markdown("Youtube Quiz Questions Generator📚")
-st.sidebar.markdown("Generate Quiz Questions📚")
+st.title("Youtube Quiz Generator 🎥")
+st.sidebar.success("A quiz will be cretaed based on the video transcript")
 
 # Generate a text completion
 def get_completion(prompt, model="gpt-3.5-turbo"):
@@ -68,7 +68,7 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
 with st.form(key = "chat"):
     url = st.text_input("Enter the Youtube link: ") 
     
-    submitted = st.form_submit_button("Generate Quiz Questions📚")
+    submitted = st.form_submit_button("Generate Quiz Questions")
     
     if submitted:
         VIDEO_URL = url
