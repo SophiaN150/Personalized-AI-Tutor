@@ -3,7 +3,12 @@ import fitz  #PyMuPDF
 
 from openai import OpenAI
 
-client = OpenAI(api_key='YOUR-API-KEYS-HERE')
+client = OpenAI(api_key='apikey')
+
+print("Upload a PDF file to extract the text and generate a summary.")
+
+st.title("Summarize and Translate ✍️")
+st.sidebar.success("Quickly summarize your document")
 
 # Create a file uploader
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
