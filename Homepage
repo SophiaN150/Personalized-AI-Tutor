@@ -1,0 +1,6 @@
+import streamlit as st
+
+st.title("Welcome to your AI Tutor 📚")
+
+st.text("This AI Classroom is designed to help you achieve your academic goals!")
+st.sidebar.success("Select a menu option to get started")
