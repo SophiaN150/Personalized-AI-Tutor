@@ -14,3 +14,16 @@ knowledge_about_course = st.text_area('What do you know about the course?')
 
 if st.button('Submit'):
     st.write("You've submitted the survey.")
+    
+    if learning_style == 'Visual':
+        st.write("You're a visual learner! Here are some resources...")
+        # Display resources for visual learners
+    elif learning_style == 'Auditory':
+        st.write("You're an auditory learner! Here are some resources...")
+        # Display resources for auditory learners
+    elif learning_style == 'Read/Write':
+        st.write("You're a read/write learner! Here are some resources...")
+        # Display resources for read/write learners
+    elif learning_style == 'Kinesthetic':
+        st.write("You're a kinesthetic learner! Here are some resources...")
+        # Display resources for kinesthetic learners
