@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title("User Survey 📝")
-st.sidebar.success("Tell me about yourself")
+st.sidebar.success("Personalize your learning experience!")
 
 learning_styles = ['Visual', 'Auditory', 'Read/Write', 'Kinesthetic']
 learning_style = st.selectbox("What is your learning style?", learning_styles)
@@ -13,17 +13,28 @@ understanding_level = st.select_slider('Rate your level of understanding in the 
 knowledge_about_course = st.text_area('What do you know about the course?')
 
 if st.button('Submit'):
-    st.write("You've submitted the survey.")
-    
+    st.write("Thank you for submitting the survey.")
+    average_score = (learning_capabilities + understanding_level) / 2
+
+    if average_score <= 2:
+        level = 'beginner'
+    elif average_score <= 4:
+        level = 'intermediate'
+    else:
+        level = 'advanced'
+
     if learning_style == 'Visual':
-        st.write("You're a visual learner! Here are some resources...")
-        # Display resources for visual learners
+        st.sidebar.write(f"You're a visual learner at the {level} level! Here are some resources:")
+        st.sidebar.markdown('* Resource 1')
+        st.sidebar.markdown('* Resource 2')
+        st.sidebar.markdown('* Resource 3')
     elif learning_style == 'Auditory':
-        st.write("You're an auditory learner! Here are some resources...")
-        # Display resources for auditory learners
+        st.sidebar.write(f"You're an auditory learner at the {level} level! Here are some resources:")
+        st.sidebar.markdown('* Resource 1')
+        st.sidebar.markdown('* Resource 2')
+        st.sidebar.markdown('* Resource 3')
     elif learning_style == 'Read/Write':
-        st.write("You're a read/write learner! Here are some resources...")
-        # Display resources for read/write learners
-    elif learning_style == 'Kinesthetic':
-        st.write("You're a kinesthetic learner! Here are some resources...")
-        # Display resources for kinesthetic learners
+        st.sidebar.write(f"You're a read/write learner at the {level} level! Here are some resources:")
+        st.sidebar.markdown('* Resource 1')
+        st.sidebar.markdown('* Resource 2')
+        st.sidebar.markdown('* Resource 3')
