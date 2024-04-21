@@ -2,6 +2,9 @@ import streamlit as st
 import fitz  # PyMuPDF
 import openai
 
+# Sidebar description
+st.sidebar.success("Create a short quiz based on a PDF file")
+
 # Define the OpenAI API key
 openai.api_key = 'API Key'
 
