@@ -1,6 +1,8 @@
 import streamlit as st
 import openai
 
+st.sidebar.success("Create flashcard questions based on a PDF file")
+
 def generate_content(text, content_type):
     """
     Generate educational content based on the extracted text.
@@ -13,7 +15,7 @@ def generate_content(text, content_type):
         str: Generated educational content.
     """
     # Initialize the OpenAI client
-    client = openai.OpenAI(api_key='your API key here')
+    openai.api_key='KEY'
 
     # Define the prompt depending on the required content type
     if content_type == 'notes':
@@ -24,7 +26,7 @@ def generate_content(text, content_type):
         raise ValueError("Unsupported content type. Choose 'notes' or 'quiz'.")
 
     # Call the OpenAI API using the new chat completions method
-    response = client.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Ensure this is an appropriate chat model
         messages=[
             {
@@ -38,7 +40,7 @@ def generate_content(text, content_type):
     return response.choices[0].message.content.strip()  # Update based on the structure of chat completions
 
 # Streamlit interface
-st.title("Educational Content Generator")
+st.title("Study Material Generator")
 st.subheader("Generate educational 'notes' or 'quiz' based on input text")
 
 # Text input
@@ -52,5 +54,7 @@ if st.button('Generate Content'):
     # Generate content based on the selected type and provided text
     generated_content = generate_content(user_input_text, content_type)
     # Display the generated content
+    st.subheader("Generated Content:")
+    st.write(generated_content)
     st.subheader("Generated Content:")
     st.write(generated_content)
