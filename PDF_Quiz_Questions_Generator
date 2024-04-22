@@ -2,11 +2,10 @@ import streamlit as st
 import fitz  # PyMuPDF
 import openai
 
-# Sidebar description
 st.sidebar.success("Create a short quiz based on a PDF file")
 
 # Define the OpenAI API key
-openai.api_key = 'API Key'
+openai.api_key = 'KEY'
 
 # Define the function to summarize text
 def abstract_summary_extraction(text):
@@ -65,4 +64,5 @@ if uploaded_file is not None:
     quiz_questions = generate_quiz_questions(summary)
 
     # Display the quiz questions
+    st.write(f'Quiz Questions: {quiz_questions}')
     st.write(f'Quiz Questions: {quiz_questions}')
