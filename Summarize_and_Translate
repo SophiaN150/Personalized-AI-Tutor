@@ -1,21 +1,15 @@
 import streamlit as st
 import fitz  #PyMuPDF
-import openai 
 
-#from openai import OpenAI
+from openai import OpenAI
 
-openai.api_key = 'KEY'
-
-print("Upload a PDF file to extract the text and generate a summary.")
-
-st.title("Summarize and Translate ✍️")
-st.sidebar.success("Quickly summarize your document")
+client = OpenAI(api_key='API_KEY_HERE')
 
 # Create a file uploader
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 def abstract_summary_extraction(transcription):
-   response = openai.ChatCompletion.create(
+   response = client.chat.completions.create(
        model="gpt-3.5-turbo",
        temperature=0,
        messages=[
@@ -30,26 +24,6 @@ def abstract_summary_extraction(transcription):
        ]
    )
    return response.choices[0].message.content
-def translate(text, source_language = "English", target_language = "French"):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-                "role": "system",
-                "content": "You will be provided with a sentence in "+ source_language
-                +", and your task is to translate it into " + target_language 
-            },
-            {
-                "role": "user",
-                "content": text
-            }
-        ],
-        temperature=0.7,
-        max_tokens=64,
-        top_p=1
-    )
-    
-    return response.choices[0].message.content
 
 if uploaded_file is not None:
     # Load the PDF
@@ -62,5 +36,4 @@ if uploaded_file is not None:
         
         st.write(f"Content of Page {i+1}:")
         summary = abstract_summary_extraction(text)
-        translated_summary = translate(summary, "English", "French")
-        st.write(translated_summary)
+        st.write(summary)
