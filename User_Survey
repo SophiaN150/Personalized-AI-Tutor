@@ -1,12 +1,13 @@
 import streamlit as st
 
 st.title("User Survey 📝")
+st.write("This survey is designed to understand your learning style and capabilities in order to provide you with personalized resources that will enhance your learning experience.")
 st.sidebar.success("Personalize your learning experience!")
 
 learning_styles = ['Visual', 'Auditory', 'Read/Write', 'Kinesthetic']
 learning_style = st.selectbox("What is your learning style?", learning_styles)
 
-learning_capabilities = st.select_slider('Rate your learning capabilities on a scale of 1 to 5:', options=[1, 2, 3, 4, 5])
+learning_capabilities = st.select_slider('On a scale of 1 to 5, how confident do you feel in your understanding and ability to learn the course material:', options=[1, 2, 3, 4, 5])
 
 understanding_level = st.select_slider('Rate your level of understanding in the course on a scale of 1 to 5:', options=[1, 2, 3, 4, 5])
 
@@ -30,11 +31,3 @@ if st.button('Submit'):
         st.sidebar.markdown('* Resource 3')
     elif learning_style == 'Auditory':
         st.sidebar.write(f"You're an auditory learner at the {level} level! Here are some resources:")
-        st.sidebar.markdown('* Resource 1')
-        st.sidebar.markdown('* Resource 2')
-        st.sidebar.markdown('* Resource 3')
-    elif learning_style == 'Read/Write':
-        st.sidebar.write(f"You're a read/write learner at the {level} level! Here are some resources:")
-        st.sidebar.markdown('* Resource 1')
-        st.sidebar.markdown('* Resource 2')
-        st.sidebar.markdown('* Resource 3')
