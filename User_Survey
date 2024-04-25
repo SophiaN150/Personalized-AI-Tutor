@@ -29,5 +29,13 @@ if st.button('Submit'):
         st.sidebar.markdown('* Resource 1')
         st.sidebar.markdown('* Resource 2')
         st.sidebar.markdown('* Resource 3')
-    elif learning_style == 'Auditory':
-        st.sidebar.write(f"You're an auditory learner at the {level} level! Here are some resources:")
+    elif learning_style == 'Read/Write':
+        st.sidebar.write("You're a read/write learner! Here are some resources:")
+        st.sidebar.markdown('* Resource 1')
+        st.sidebar.markdown('* Resource 2')
+        st.sidebar.markdown('* Resource 3')
+    elif learning_style == 'Kinesthetic':
+        st.sidebar.write("You're a kinesthetic learner! Here are some resources:")
+        st.sidebar.markdown('* Resource 1')
+        st.sidebar.markdown('* Resource 2')
+        st.sidebar.markdown('* Resource 3')
