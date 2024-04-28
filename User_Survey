@@ -12,8 +12,6 @@ learning_capabilities = st.select_slider('On a scale of 1 to 5, how confident do
 
 understanding_level = st.select_slider('Rate your level of understanding in the course on a scale of 1 to 5:', options=[1, 2, 3, 4, 5])
 
-knowledge_about_course = st.text_area('What do you know about the course?')
-
 terms = st.checkbox('I agree to the [terms of service](https://docs.google.com/document/d/1BFLpz2VMNZfpyRK44Jpxfy7x6ypovkG0Ye9WMNuZ9sc/edit?usp=sharing).')
 
 if terms:
