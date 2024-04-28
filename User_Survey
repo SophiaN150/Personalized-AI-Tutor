@@ -4,6 +4,7 @@ st.title("User Survey 📝")
 st.write("This survey is designed to understand your learning style and capabilities in order to provide you with personalized resources that will enhance your learning experience.")
 st.sidebar.success("Personalize your learning experience!")
 
+
 learning_styles = ['Visual', 'Auditory', 'Read/Write', 'Kinesthetic']
 learning_style = st.selectbox("What is your learning style?", learning_styles)
 
@@ -13,7 +14,7 @@ understanding_level = st.select_slider('Rate your level of understanding in the 
 
 knowledge_about_course = st.text_area('What do you know about the course?')
 
-terms = st.checkbox('I agree to the terms of service')
+terms = st.checkbox('I agree to the [terms of service](https://docs.google.com/document/d/1BFLpz2VMNZfpyRK44Jpxfy7x6ypovkG0Ye9WMNuZ9sc/edit?usp=sharing).')
 
 if terms:
     if st.button('Submit'):
