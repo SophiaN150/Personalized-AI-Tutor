@@ -13,29 +13,75 @@ understanding_level = st.select_slider('Rate your level of understanding in the 
 
 knowledge_about_course = st.text_area('What do you know about the course?')
 
-if st.button('Submit'):
-    st.write("Thank you for submitting the survey.")
-    average_score = (learning_capabilities + understanding_level) / 2
+terms = st.checkbox('I agree to the terms of service')
 
-    if average_score <= 2:
-        level = 'beginner'
-    elif average_score <= 4:
-        level = 'intermediate'
-    else:
-        level = 'advanced'
+if terms:
+    if st.button('Submit'):
+        st.write("Thank you for submitting the survey.")
+        average_score = (learning_capabilities + understanding_level) / 2
 
-    if learning_style == 'Visual':
-        st.sidebar.write(f"You're a visual learner at the {level} level! Here are some resources:")
-        st.sidebar.markdown('* Resource 1')
-        st.sidebar.markdown('* Resource 2')
-        st.sidebar.markdown('* Resource 3')
-    elif learning_style == 'Read/Write':
-        st.sidebar.write("You're a read/write learner! Here are some resources:")
-        st.sidebar.markdown('* Resource 1')
-        st.sidebar.markdown('* Resource 2')
-        st.sidebar.markdown('* Resource 3')
-    elif learning_style == 'Kinesthetic':
-        st.sidebar.write("You're a kinesthetic learner! Here are some resources:")
-        st.sidebar.markdown('* Resource 1')
-        st.sidebar.markdown('* Resource 2')
-        st.sidebar.markdown('* Resource 3')
+        if average_score <= 2:
+            level = 'beginner'
+        elif average_score <= 4:
+            level = 'intermediate'
+        else:
+            level = 'advanced'
+
+        if learning_style == 'Visual':
+            st.sidebar.write(f"You're a visual learner at the {level} level! Here are some resources:")
+            if level == 'beginner':
+                st.sidebar.markdown('* [Create your Visual Aids](https://example.com/)')
+                st.sidebar.markdown('* [Browse infographics](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Visual Resource 3](https://example.com/)')
+            elif level == 'intermediate':
+                st.sidebar.markdown('* [Intermediate Visual Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Visual Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Visual Resource 3](https://example.com/)')
+            else:
+                st.sidebar.markdown('* [Advanced Visual Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Visual Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Visual Resource 3](https://example.com/)')
+        elif learning_style == 'Auditory':
+            st.sidebar.write(f"You're an auditory learner at the {level} level! Here are some resources:")
+            if level == 'beginner':
+                st.sidebar.markdown('* [Beginner Auditory Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Auditory Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Auditory Resource 3](https://example.com/)')
+            elif level == 'intermediate':
+                st.sidebar.markdown('* [Intermediate Auditory Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Auditory Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Auditory Resource 3](https://example.com/)')
+            else:
+                st.sidebar.markdown('* [Advanced Auditory Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Auditory Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Auditory Resource 3](https://example.com/)')
+        elif learning_style == 'Read/Write':
+            st.sidebar.write("You're a read/write learner! Here are some resources:")
+            if level == 'beginner':
+                st.sidebar.markdown('* [Beginner Read/Write Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Read/Write Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Read/Write Resource 3](https://example.com/)')
+            elif level == 'intermediate':
+                st.sidebar.markdown('* [Intermediate Read/Write Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Read/Write Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Read/Write Resource 3](https://example.com/)')
+            else:
+                st.sidebar.markdown('* [Advanced Read/Write Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Read/Write Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Read/Write Resource 3](https://example.com/)')
+        elif learning_style == 'Kinesthetic':
+            st.sidebar.write("You're a kinesthetic learner! Here are some resources:")
+            if level == 'beginner':
+                st.sidebar.markdown('* [Beginner Kinesthetic Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Kinesthetic Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Kinesthetic Resource 3](https://example.com/)')
+            elif level == 'intermediate':
+                st.sidebar.markdown('* [Intermediate Kinesthetic Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Kinesthetic Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Intermediate Kinesthetic Resource 3](https://example.com/)')
+            else:
+                st.sidebar.markdown('* [Advanced Kinesthetic Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Kinesthetic Resource 2](https://example.com/)')
+                st.sidebar.markdown('* [Advanced Kinesthetic Resource 3](https://example.com/)')
+else:
+    st.write("You must agree to the terms of service to submit the survey.")
