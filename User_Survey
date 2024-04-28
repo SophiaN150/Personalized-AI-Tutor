@@ -30,8 +30,8 @@ if terms:
         if learning_style == 'Visual':
             st.sidebar.write(f"You're a visual learner at the {level} level! Here are some resources:")
             if level == 'beginner':
-                st.sidebar.markdown('* [Create your Visual Aids](https://example.com/)')
-                st.sidebar.markdown('* [Browse infographics](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Visual Resource 1](https://example.com/)')
+                st.sidebar.markdown('* [Beginner Visual Resource 2](https://example.com/)')
                 st.sidebar.markdown('* [Beginner Visual Resource 3](https://example.com/)')
             elif level == 'intermediate':
                 st.sidebar.markdown('* [Intermediate Visual Resource 1](https://example.com/)')
