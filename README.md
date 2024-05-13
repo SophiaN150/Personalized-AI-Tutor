@@ -1,9 +1,8 @@
-# CASExplorer 
+# Study GenuisPro
 
 <!--
 ![GitHub Logo](/CASExplorer.png) 
 -->
-##
 
 ## Overview
 
