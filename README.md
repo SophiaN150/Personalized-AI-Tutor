@@ -29,5 +29,5 @@ A cutting-edge application leveraging AI technology to generate interactive stud
 Our goal is to assist disadvantaged students in the Silicon Valley area by supplying essential study materials and resources, addressing gaps often found in underfunded educational institutions. We aim to make studying less daunting and more accessible, fostering a more convenient learning experience for all.
 
 ## See Our Demo Video
-[![Watch the video](
-https://github.com/SophiaN150/Personalized-AI-Tutor/assets/165322447/b924e05a-0dc5-48b2-be94-8fd87380ed9e) 
+[![Watch the video](https://github.com/SophiaN150/Personalized-AI-Tutor/assets/165322447/b924e05a-0dc5-48b2-be94-8fd87380ed9e) 
+
