@@ -1,7 +1,7 @@
 # Study GenuisPro
 
 <!--
-![GitHub Logo](/CASExplorer.png) 
+![image](/logo.png) 
 -->
 
 ## Overview
