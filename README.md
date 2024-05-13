@@ -1,2 +1,1 @@
-Study Genius Pro
 
