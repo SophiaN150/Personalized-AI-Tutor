@@ -1,7 +1,7 @@
 # Study GenuisPro
 
 <!--
-![image](/logo.png) 
+![GitHub Logo](/logo.png) 
 -->
 
 ## Overview
