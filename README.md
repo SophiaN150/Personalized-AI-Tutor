@@ -1,8 +1,7 @@
 # Study GenuisPro
 
-<!--
-![alt text](logo.png)
--->
+
+![imaget](logo.png)
 
 ## Overview
 
