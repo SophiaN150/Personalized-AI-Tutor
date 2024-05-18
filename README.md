@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Study GeniusPro is an AI application that aims to address the UN Sustainable Development Goals of Quality Education, specifically targeting studying resources for all educational levels regardless of financial background.
+The StudyGenius Pro is an AI application that aims to address the UN Sustainable Development Goals of Quality Education, specifically targeting studying resources for all educational levels regardless of financial background.
 
 ## Study GenuisPro: What is it?
 
