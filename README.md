@@ -19,7 +19,7 @@ There is a direct correlation between where you are from in Silicon Valley and t
 ## Our Solution
 A cutting-edge application leveraging AI technology to generate interactive study materials and resources, enhancing the efficiency and effectiveness of students' learning experiences.
 1. **User Survey feature:** Users will answer a series of questions about their learning backgroup and experience which will then generate study resources based on their learning preferences. 
-2. **Lesson Planner:** Users can generate a study plan or guide which will organize their studying time buy breaking down the different chapters and topics that needs to be studied. 
+2. **Lesson Planner:** Users can generate a study plan or guide which will organize their studying time by breaking down the different chapters and topics that needs to be studied. 
 3. **Study Material Generator:** Creates customized educational notes or quizzes from user-provided text, offering a tailored and engaging learning experience.
 4. **Summary & Quiz Generator:** Condenses PDF files into concise summaries and generates multiple-choice quiz questions, reducing the time required to read extensive text and allowing for more interactive study sessions.
    
